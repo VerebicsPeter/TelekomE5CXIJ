@@ -1,0 +1,14 @@
+[
+  {
+    "process": "ping elte.hu",
+    "result": "Pinging google.com [142.250.201.206] with 32 bytes of data:\r\nReply from 142.250.201.206: bytes=32 time=1ms TTL=1\r\nReply from 142.250.201.206: bytes=32 time=1ms TTL=1\r\nReply from 142.250.201.206: bytes=32 time=2ms TTL=1\r\nReply from 142.250.201.206: bytes=32 time=1ms TTL=1\r\n\r\nPing statistics for 142.250.201.206:\r\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 1ms, Maximum = 2ms, Average = 1ms"
+  },
+  {
+    "process": "ping berkeley.edu",
+    "result": "Pinging google.com [142.250.201.206] with 32 bytes of data:\r\nReply from 142.250.201.206: bytes=32 time=1ms TTL=1\r\nReply from 142.250.201.206: bytes=32 time=1ms TTL=1\r\nReply from 142.250.201.206: bytes=32 time=2ms TTL=1\r\nReply from 142.250.201.206: bytes=32 time=1ms TTL=1\r\n\r\nPing statistics for 142.250.201.206:\r\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 1ms, Maximum = 2ms, Average = 1ms"
+  },
+  {
+    "process": "ping google.com",
+    "result": "Pinging google.com [142.250.201.206] with 32 bytes of data:\r\nReply from 142.250.201.206: bytes=32 time=1ms TTL=1\r\nReply from 142.250.201.206: bytes=32 time=1ms TTL=1\r\nReply from 142.250.201.206: bytes=32 time=2ms TTL=1\r\nReply from 142.250.201.206: bytes=32 time=1ms TTL=1\r\n\r\nPing statistics for 142.250.201.206:\r\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 1ms, Maximum = 2ms, Average = 1ms"
+  }
+]
