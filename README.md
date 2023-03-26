@@ -1,1 +1,1 @@
-# TelekomE5CXIJ
+# Telekomunikációs hálózatok
