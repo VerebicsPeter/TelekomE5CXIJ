@@ -1,8 +1,8 @@
-from socket import socket,AF_INET, SOCK_STREAM, timeout, SOL_SOCKET, SO_REUSEADDR
+from socket import socket, AF_INET, SOCK_STREAM, timeout, SOL_SOCKET, SO_REUSEADDR
 import struct
 
 server_addr = ('localhost', 10000)
-packer = struct.Struct('I I 1s')  #int, int, char[1]
+packer = struct.Struct('I I 1s') # int, int, char[1]
 
 with socket(AF_INET, SOCK_STREAM) as client:
 	client.connect(server_addr)
@@ -12,10 +12,10 @@ with socket(AF_INET, SOCK_STREAM) as client:
 	
 	values = (int(szam1), int(szam2), op.encode())
 	packed_data = packer.pack(*values)
-	# packed_data = packer.pack(int(szam1), int(szam2), op.encode())   # ua mint az elozo sor
+	# packed_data = packer.pack(int(szam1), int(szam2), op.encode()) # ua mint az elozo sor
 	
 	client.sendall(packed_data)
 	data = client.recv(10).decode()
 	
-	print("Eredmeny a szervertol:", data)
+	print("Eredmeny:", data)
 	
