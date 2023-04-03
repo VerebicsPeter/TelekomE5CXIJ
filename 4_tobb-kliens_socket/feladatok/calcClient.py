@@ -15,7 +15,7 @@ with socket(AF_INET, SOCK_STREAM) as client:
 
 		szam1 = random.randint(1, 100) # input("Adj meg egy szamot:")
 		szam2 = random.randint(1, 100) # input("Adj meg masik szamot:")
-		op = input("Adj meg egy operátort:")
+		op = input("Adj meg egy operátort:") # esetleg ezt is lehet randomizálni
 
 		values = (int(szam1), int(szam2), op.encode())
 		packed_data = packer.pack(*values)
@@ -24,3 +24,4 @@ with socket(AF_INET, SOCK_STREAM) as client:
 		data = client.recv(10).decode()
 	
 		print("Eredmény:", data)
+# close socket
