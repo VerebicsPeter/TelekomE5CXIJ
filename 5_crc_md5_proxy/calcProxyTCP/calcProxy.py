@@ -1,7 +1,7 @@
 from socket import socket, AF_INET, SOCK_STREAM
 import select, struct
 
-proxy_addr = ('localhost',10000)
+proxy_addr  = ('localhost',10000)
 server_addr = ('localhost',11000)
 
 packer = struct.Struct('i i c')
@@ -21,8 +21,6 @@ with socket(AF_INET, SOCK_STREAM) as proxy, socket(AF_INET,SOCK_STREAM) as serve
 	proxy.listen(5)
 
 	serverSock.connect(server_addr)
-
-	
 	
 	inputs = [proxy]
 	

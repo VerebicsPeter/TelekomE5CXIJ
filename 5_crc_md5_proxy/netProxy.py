@@ -4,11 +4,11 @@ import sys
 
 # hasznalat: pl: python netProxy.py ggombos.web.elte.hu 80
 # bongeszoben: localhost:10000
-# bongeszoben: http://localhost:10000/oktatas/SzamHalo		# leiltott tartalom
+# bongeszoben: http://localhost:10000/oktatas/SzamHalo # leiltott tartalom
 
 webaddres = (sys.argv[1],int(sys.argv[2]))
 
-proxy  = socket(AF_INET, SOCK_STREAM)
+proxy = socket(AF_INET, SOCK_STREAM)
 
 proxy_addr = ('',10000)
 
