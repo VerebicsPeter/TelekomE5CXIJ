@@ -4,7 +4,7 @@ import struct
 packer = struct.Struct("I I 1s")
 
 s1 = input("Szam1:")
-o = input("Operator:")
+o  = input("Operator:")
 s2 = input("Szam2:")
 
 values = (int(s1),int(s2),o.encode())

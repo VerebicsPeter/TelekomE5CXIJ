@@ -4,17 +4,20 @@ from socket import socket, AF_INET, SOCK_STREAM, timeout, SOL_SOCKET, SO_REUSEAD
 
 def logarithmic_search(min, max, client):
 	center = (min + max) // 2 # number to check
+	
+	if max == min + 1:
+		ceq = '=' # check for equality
+		packed_data = packer.pack(ceq.encode(), int(center))
+		client.sendall(packed_data)
+		answer = client.recv(10).decode()
 
-	ceq = '=' # check for equality
-
-	packed_data = packer.pack(ceq.encode(), int(center))
-	client.sendall(packed_data)
-	answer = client.recv(10).decode()
-
-	if (answer[0] == 'Y'):
-		print('Game won.')
-		return # stop execution on win #
-
+		if (answer[0] == 'Y'):
+			print('Game won.')
+			return # stop execution on win #
+		else:
+			print('Game lost.')
+			return # stop execution on wrong guess #
+			
 	cop = '<' # check recursively
 	
 	packed_data = packer.pack(cop.encode(), int(center))
@@ -22,10 +25,10 @@ def logarithmic_search(min, max, client):
 	answer = client.recv(10).decode()
 
 	if (answer[0] == 'N'):
-		logarithmic_search(center + 1, max, client)
+		logarithmic_search(center, max, client)
 
 	if (answer[0] == 'I'):
-		logarithmic_search(min, center - 1, client)
+		logarithmic_search(min, center, client)
 
 	if (answer[0] == 'K'):
 		print('Game lost.')

@@ -8,14 +8,16 @@ with socket(AF_INET, SOCK_STREAM) as client:
 	client.connect(server_addr)
 	x = input("x: ")
 	y = input("y: ")
-	h = input("hour: ")
-	m = input("minute: ")
+	h = input("h: ")
+	m = input("m: ")
 	
 	message = x + ';' + y + ';' + h + ';' + m + ";E5CXIJ"
 	print(message)
 	# pack message
-	
-	#client.sendall(packed_data)
-	#data = client.recv(10).decode()
-	
-	#print("Eredmeny:", data)
+	packed_data = packer.pack(message.encode())
+	# send message
+	client.sendall(packed_data)
+	#exit(0)
+	# recieve response
+	data = client.recv(128).decode()
+	print("Result:", data)

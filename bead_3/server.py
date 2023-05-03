@@ -57,17 +57,18 @@ with socket(AF_INET, SOCK_STREAM) as server:
 
 					if guessed:
 						msg = unpacker.pack(b'V', 0)
-					elif guesses[s.getpeername()] >= 25:
+					elif guesses[s.getpeername()] >= 20:
 						msg = unpacker.pack(b'K', 0)
+					elif operator == '==' and not l:
+						msg = unpacker.pack(b'K', 0)
+					elif operator == '==' and l:
+						guessed = True					# number is guessed
+						msg = unpacker.pack(b'Y', 0)
 					elif l:
-						if operator == '==':				#
-							guessed = True					# number is guessed
-							msg = unpacker.pack(b'Y', 0)
-						else:								#
-							guesses[s.getpeername()] += 1	# guess is correct (but number isn't guessed)
-							msg = unpacker.pack(b'I', 0)	
-					else:									# 
-						guesses[s.getpeername()] += 1		# guess isn't correct
+						guesses[s.getpeername()] += 1	# interval is guessed
+						msg = unpacker.pack(b'I', 0)
+					else:							 
+						guesses[s.getpeername()] += 1	# interval isn't guessed
 						msg = unpacker.pack(b'N', 0)
 					
 					if (msg != 0): s.sendall(msg)

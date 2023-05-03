@@ -1,7 +1,7 @@
 from socket import socket, AF_INET, SOCK_STREAM
 import select, struct
 
-proxy_addr  = ('localhost',10000)
+proxy_addr = ('localhost',10000)
 server_addr = ('localhost',11000)
 
 packer = struct.Struct('i i c')
@@ -14,7 +14,6 @@ def sabotage(original):
 	print("Szabotált üzenete:",sabotageData)
 	reply = packer.pack(*tuple(sabotageData))
 	return reply
-
 
 with socket(AF_INET, SOCK_STREAM) as proxy, socket(AF_INET,SOCK_STREAM) as serverSock:
 	proxy.bind(proxy_addr)

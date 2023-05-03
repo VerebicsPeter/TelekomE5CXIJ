@@ -15,9 +15,9 @@ with socket(AF_INET, SOCK_DGRAM) as server:
 			
 			unpacked_data = packer.unpack(data)
 
-			print("Kaptam", unpacked_data,"tole:",client)
+			print("Kaptam", unpacked_data, "tole:", client)
 			
-			x = eval(str(unpacked_data[0])+unpacked_data[2].decode()+str(unpacked_data[1]))
+			x = eval(str(unpacked_data[0]) + unpacked_data[2].decode() + str(unpacked_data[1]))
 
 			server.sendto(str(x).encode(), client)
 		except timeout:
