@@ -1,0 +1,6 @@
+parancsok
+ szerver futtatása:
+    py server.py             - elindítja a szervert a localhost:10000 - en
+ kliens futtatása:
+    py client.py             - elindítja a klienst, a kliens a standard inputról olvas
+    py client.py <json-file> - elindítja a klienst, a kliens a megadott json file-ból olvas, ha tud
